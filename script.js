@@ -1,3 +1,23 @@
+// Selecting elements
+const gameContainer = document.querySelector('.container');
+const optionButtons = gameContainer.querySelectorAll('.btn-option');
+const scorecontainer = gameContainer.querySelector('.score-container');
+const restartButton = gameContainer.querySelector('.restart-btn');  
+
+// Building functions
+
+// Hook up the event listener
+optionButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        // let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
+        let playerSelection = button.textContent.toLowerCase();
+        let computerSelection = getComputerChoice(computerChoice);
+        playRound(playerSelection, computerSelection);
+        console.log(playerSelection);
+        console.log(computerSelection);
+    });
+});
+
 let computerChoice = ['rock', 'paper', 'scissors'];
 
 function getComputerChoice() {
@@ -29,8 +49,8 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 1; i <= 5; i++) {
-        let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
-        let computerSelection = getComputerChoice(computerChoice);
+        //let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
+        // let computerSelection = getComputerChoice(computerChoice);
         console.log(`Player's choice: ${playerSelection}. Computer's choice: ${computerSelection}`);
         console.log(`Round ${i}`);
         playRound(playerSelection, computerSelection);
