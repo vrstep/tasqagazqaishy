@@ -6,10 +6,10 @@ const restartButton = gameContainer.querySelector('.restart-btn');
 
 // Building functions
 
+
 // Hook up the event listener
 optionButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        // let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
         let playerSelection = button.textContent.toLowerCase();
         let computerSelection = getComputerChoice(computerChoice);
         playRound(playerSelection, computerSelection);
