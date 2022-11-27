@@ -2,10 +2,10 @@
 const gameContainer = document.querySelector('.container');
 const optionButtons = gameContainer.querySelectorAll('.btn-option');
 const scorecontainer = gameContainer.querySelector('.score-container');
-const restartButton = gameContainer.querySelector('.restart-btn');  
+const restartButton = gameContainer.querySelector('.restart-btn');
+const gameResult = gameContainer.querySelector('.game-result');  
 
 // Building functions
-
 
 // Hook up the event listener
 optionButtons.forEach((button) => {
@@ -28,21 +28,39 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case 'rock':
-            if (computerSelection == 'paper') console.log("You lost");
-            else if (computerSelection == 'scissors') console.log("You won");
-            else console.log("Tie");
+            if (computerSelection == 'paper') {
+                gameResult.innerHTML = "You lost";
+                console.log("You lost");
+            }
+            else if (computerSelection == 'scissors') {
+                gameResult.innerHTML = "You won";
+                console.log("You won");
+            }
+            else gameResult.innerHTML = 'Tie';
             break;
         
         case 'paper':
-            if (computerSelection == 'scissors') console.log("You lost");
-            else if (computerSelection == 'rock') console.log("You won");
-            else console.log("Tie");
+            if (computerSelection == 'scissors') {
+                gameResult.innerHTML = "You lost";
+                console.log("You lost");
+            }
+            else if (computerSelection == 'rock') {
+                gameResult.innerHTML = "You won";
+                console.log("You won");
+            }
+            else gameResult.innerHTML = 'Tie';
             break;
 
         case 'scissors':
-            if (computerSelection == 'rock') console.log("You lost");
-            else if (computerSelection == 'paper') console.log("You won");
-            else console.log("Tie");
+            if (computerSelection == 'rock') {
+                gameResult.innerHTML = "You lost";
+                console.log("You lost");
+            }
+            else if (computerSelection == 'paper') {
+                gameResult.innerHTML = "You won";
+                console.log("You won");
+            }
+            else gameResult.innerHTML = 'Tie';
             break;
     }
 }
